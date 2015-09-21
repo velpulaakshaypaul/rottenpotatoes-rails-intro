@@ -11,26 +11,8 @@ class MoviesController < ApplicationController
   end
 
   def index
-#    @movies = Movie.all
-redirect = false
+    @movies = Movie.all
 
-        if params[:sort]
-            @sorting = params[:sort]
-        elsif session[:sort]
-            @sorting = session[:sort]
-            redirect = true
-        end
-
-        if params[:ratings]
-            @ratings = params[:ratings]
-        elsif session[:ratings]
-            @ratings = session[:ratings]
-            redirect = true
-        else
-            @all_ratings.each do |rat|
-                (@ratings ||= { })[rat] = 1
-            end
-            redirect = true
   end
 
   def new

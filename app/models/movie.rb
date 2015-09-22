@@ -7,7 +7,8 @@ class Movie <  ActiveRecord::Base
   #  end
 def self.ratings
 # self.pluck(:rating).uniq
-return [1,2,3,4,5]
+self.pluck(:rating).uniq
+return 
 
 end
 end

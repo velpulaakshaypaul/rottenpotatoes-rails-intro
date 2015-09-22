@@ -1,4 +1,4 @@
-class Movie < ActiveRecord::Base, ActiveRecord::Calcuations
+class Movie <  ActiveRecord::Calcuations
 #  attr_accessible :title, :rating, :description, :release_date
 #def self.movies(opt)
 #self.order(opt)

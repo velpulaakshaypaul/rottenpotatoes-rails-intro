@@ -1,4 +1,4 @@
-class Movie <  ActiveRecord::Base include ActiveRecord::Calculations
+class Movie <  ActiveRecord::Base
 #  attr_accessible :title, :rating, :description, :release_date
 #def self.movies(opt)
 #self.order(opt)
@@ -6,7 +6,7 @@ class Movie <  ActiveRecord::Base include ActiveRecord::Calculations
  #       self.pluck(:rating).uniq
   #  end
 def self.ratings
- self.pluck(:rating).uniq
+# self.pluck(:rating).uniq
 self.sele
 end
 end

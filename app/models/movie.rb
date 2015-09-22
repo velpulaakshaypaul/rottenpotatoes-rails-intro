@@ -6,5 +6,6 @@ class Movie < ActiveRecord::Base
  #       self.pluck(:rating).uniq
   #  end
 def self.ratings
+array=['a','b','b']
 end
 end

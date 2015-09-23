@@ -16,8 +16,7 @@ class MoviesController < ApplicationController
 @movies=Movie.movies(params[:ratings].keys , params[:sort_by])
 @ratings=Movie.ratings
 end	
-#all_ratings=Movie.all_ratings
-end        
+#all_ratings=Movie.all_ratings        
 
   def new
     # default: render 'new' template

@@ -10,8 +10,8 @@ def self.ratings
        self.pluck(:rating).uniq
 
 end
-def self.movies(filters,sort_field)
-self.where({:rating => filters}).order(sort_field)
+def self.movies(sort_field)
+self.order(sort_field)
 end
 
 end

@@ -13,7 +13,7 @@ class MoviesController < ApplicationController
 def index
 #@movies=Movie.all
 #atings=params[:ratings] 
-@movies=Movie.movies(params[:ratings], params[:sort_by])
+@movies=Movie.movies(params[:ratings] , params[:sort_by])
 @ratings=Movie.ratings
 #all_ratings=Movie.all_ratings
 end       

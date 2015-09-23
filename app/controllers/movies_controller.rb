@@ -15,6 +15,11 @@ class MoviesController < ApplicationController
 #atings=params[:ratings] 
 @movies=Movie.movies(params[:ratings].keys , params[:sort_by])
 @ratings=Movie.ratings
+@filters= if params[:ratings].nil?
+@ratings
+else
+params[:ratings]
+end	
 #all_ratings=Movie.all_ratings
 end        
 

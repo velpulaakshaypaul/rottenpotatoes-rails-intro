@@ -18,7 +18,11 @@ redirect_to(
 :action => params[:action], :controller => params[:controller], 
 :ratings => setup[:ratings], :sort_by => setup[:sort_by])
 end
+begin
 @movies=Movie.movies(setup[:ratings], setup[:sort_by])
+rescue
+@movies=Movie.all
+end
 @ratings=Movie.ratings
 
 session[:ratings]=setup[:ratings]

@@ -11,8 +11,6 @@ class MoviesController < ApplicationController
   end
 
 def index
-#@movies=Movie.all
-#atings=params[:ratings] 
 setup= Movie.set_options(params,session)
 if setup[:redirect]
 flash.keep

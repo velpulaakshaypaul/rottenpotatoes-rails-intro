@@ -10,4 +10,8 @@ def self.ratings
        self.pluck(:rating).uniq
 
 end
+def self.mov(filters,sort_field)
+self.order(sort_field).where({:rating => filters})
+end
+
 end

@@ -11,13 +11,37 @@ def self.ratings
 
 end
 def self.movies(test,sort_field)
-begin
-self.where({:rating => test.keys}).order(sort_field)
-rescue
-self.order(sort_field)
+return self.order(sort_field) if not test
+self.where({:rating => test}).order(sort_field)
 end
-#elf.order(sort_field)
+
+
+def self.set_options(params,session)
+setup={:redirect => false }
+setup[:ratings]= if params[:ratings]
+if params[:ratings].kind_of? Hash
+params[:ratings].keys
+else
+params[:ratings]
+end
+elsif session[:ratings]
+setup[:redirect]=true
+session[:ratings]
+else
+self.ratings
+end
+
+setup[:sort_by] = if params[:sort_by] 
+params[:sort_by]
+elsif session[:sort_by] 
+setup[:redirect]=true
+session[:sort_by]
+else
+nil 
+end
+setup
 end
 end
+
 
 

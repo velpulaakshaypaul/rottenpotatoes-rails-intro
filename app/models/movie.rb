@@ -10,7 +10,7 @@ def self.ratings
        self.pluck(:rating).uniq
 
 end
-def self.movies(sort_field)
+def self.movies(test,sort_field)
 self.order(sort_field)
 end
 

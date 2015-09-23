@@ -11,8 +11,7 @@ def self.ratings
 
 end
 def self.movies(test,sort_field)
-#eturn self.order(sort_field) if not test
-self.where({:rating => test.keys}).order(sort_field)
+self.where({:rating => test}).order(sort_field)
 end
 
 end

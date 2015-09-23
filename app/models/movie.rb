@@ -11,7 +11,7 @@ def self.ratings
 
 end
 def self.movies(test,sort_field)
-self.order(sort_field)
+self.where({:rating => test}).order(sort_field)
 end
 
 end
